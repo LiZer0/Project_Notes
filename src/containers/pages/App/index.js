@@ -11,7 +11,7 @@ import "./App.css";
 function App() {
   return (
     <Provider store={store}>
-      <Router>
+      <Router basename={window.location.pathname || ""}>
         <div>
           {/* <Switch>
             <Route exact path="/login">
@@ -29,7 +29,7 @@ function App() {
           </Route> */}
 
           <Route path="/dashboard" exact component={Dashboard} />
-          <Route path="/" exact component={SplashScreen} />
+          <Route exact path="/" component={SplashScreen} />
           <Route path="/login" exact component={Login} />
           <Route path="/register" exact component={Register} />
         </div>
